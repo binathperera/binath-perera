@@ -247,3 +247,20 @@ a:hover {
     background-color: var(--bs-pagination-active-bg);
     border-color: var(--bs-pagination-active-border-color);
 }
+
+/* My styles */
+
+.name-fluid{
+    font-family: Helvetica, sans-serif;
+    font-weight: 900;
+    letter-spacing: -0.08em;
+}
+.name2-fluid{
+    font-family: Helvetica, sans-serif;
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: -0.07em;
+}
+#footer .social-links svg {
+  color: #fff;
+}
