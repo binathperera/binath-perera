@@ -113,7 +113,7 @@ h2,h3,h4,h5,h6 {
     font-weight: 700;
 }
 .display-1 {
-    font-size: calc(4.375rem + 4.5vw);
+    font-size: calc(7rem );
     font-weight: 900 ;
     font-family: var(--body-font); 
     line-height: 80%;
@@ -263,4 +263,51 @@ a:hover {
 }
 #footer .social-links svg {
   color: #fff;
+}
+#home {
+    /* Height will be set by JavaScript based on initial viewport */
+    min-height: 500px; /* Fallback height in case JavaScript doesn't load */
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    margin-top: -88px; /* Reduce empty space above */
+    padding-top: 20px; /* Maintain some spacing from fixed header */
+}
+
+#home .container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner {
+    /* background-color: var(--bs-black);
+    color: var(--bs-white); */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Banner Styles for Different Screen Sizes */
+/* Desktop and larger screens */
+@media screen and (min-width: 1024px) {
+  .banner {
+    background-image: url("../images/banner2.png");
+    background-size: 100% auto; /* Shows entire image */
+    background-repeat: no-repeat;
+    background-position: center;
+    /* Optional: Set specific width to maintain aspect ratio */
+    max-width: 100%;
+    aspect-ratio: 20/9; /* Adjust based on your image's actual ratio */
+  }
+}
+
+/* Mobile Device Styles - Banner Only */
+@media screen and (max-width: 1023px) {
+  .banner {
+    background-color: var(--bs-black) !important;
+    color: var(--bs-white) !important;
+  }
 }

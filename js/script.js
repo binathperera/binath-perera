@@ -4,6 +4,9 @@
 
     $(document).ready(function() {
       
+      // Set initial home section height based on viewport
+      setInitialHomeHeight();
+      
       // masonoary //
 
       initIsotope();
@@ -76,7 +79,55 @@
     });
   }
 
+  // Function to set initial home height based on viewport
+  function setInitialHomeHeight() {
+    var viewportHeight = window.innerHeight;
+    var headerHeight = 80; // Adjust this if your header height is different
+    var paddingHeight = 40; // Total vertical padding (top + bottom) of the banner
+    var homeHeight = viewportHeight - headerHeight - paddingHeight;
 
+    // Set the height as fixed pixels
+    $('.banner').css('height', homeHeight + 'px');
+  }
 
+  // Contact form submission to Google Sheets
+  $(document).ready(function() {
+    $('#contactForm').on('submit', function(e) {
+      e.preventDefault();
+      
+      var submitBtn = $('#submitBtn');
+      var responseMessage = $('#responseMessage');
+      
+      // Show loading state
+      submitBtn.prop('disabled', true).text('Submitting...');
+      
+      // Get form data
+      var formData = {
+        name: $('#name').val(),
+        email: $('#email').val(),
+        message: $('#message').val(),
+        timestamp: new Date().toISOString()
+      };
+      
+      // Replace this URL with your Google Apps Script web app URL
+      var scriptURL = 'https://script.google.com/macros/s/AKfycbw8OIrMEm9RjQaf117wZEnAutSEmYlW0ngG6M8v0Yrkj1lKq0hyP9ULWLtLQBaCcgSp/exec';
+      
+      $.ajax({
+        url: scriptURL,
+        method: 'POST',
+        data: formData,
+        success: function(response) {
+          responseMessage.html('<div class="alert alert-success">Thank you! Your message has been sent successfully.</div>').show();
+          $('#contactForm')[0].reset();
+        },
+        error: function(xhr, status, error) {
+          responseMessage.html('<div class="alert alert-danger">Sorry, there was an error sending your message. Please try again.</div>').show();
+        },
+        complete: function() {
+          submitBtn.prop('disabled', false).text('Submit');
+        }
+      });
+    });
+  });
 
 })(jQuery);
