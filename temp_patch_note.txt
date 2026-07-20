@@ -1,0 +1,1 @@
+Patching theme toggle: replace emoji with SVG icons; update JS to toggle 'active' class; add icon CSS in style.css.

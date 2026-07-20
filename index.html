@@ -119,64 +119,36 @@
         <div class="d-flex align-items-center g-4">
           <a class="navbar-brand d-flex" href="index.html">
             <h1 class="name-fluid">Binath.</h1>
-            <!-- <img src="images/logo.png" class="img-fluid" id="logo"> -->
           </a>
-          <div class="icon px-5">
-            <!-- <a href="#" class="text-decoration-none">
-              <svg class="skype" width="24" height="24">
-                <use xlink:href="#skype"></use>
-              </svg>
-            </a>
-            <a href="#" class="text-decoration-none">
-              <svg class="snapchat" width="24" height="24">
-                <use xlink:href="#snapchat"></use>
-              </svg>
-            </a>
-            <a href="#" class="text-decoration-none">
-              <svg class="telegram" width="24" height="24">
-                <use xlink:href="#telegram"></use>
-              </svg>
-            </a>
-            <a href="#" class="text-decoration-none">
-              <svg class="tumblr" width="24" height="24">
-                <use xlink:href="#tumblr"></use>
-              </svg>
-            </a>
-            <a href="#" class="text-decoration-none">
-              <svg class="twitter" width="24" height="24">
-                <use xlink:href="#twitter"></use>
-              </svg>
-            </a>
-            <a href="#" class="text-decoration-none">
-              <svg class="whatsapp" width="24" height="24">
-                <use xlink:href="#whatsapp"></use>
-              </svg>
-            </a> -->
-            <!-- <a href="https://github.com/binathperera" target="_blank" class="text-decoration-none">
-              <svg class="github" width="24" height="24">
-                <use xlink:href="#github"></use>
-              </svg>
-            </a>
-            <a href="https://www.linkedin.com/in/binathperera/" target="_blank" class="text-decoration-none">
-              <svg class="linkedin" width="24" height="24">
-                <use xlink:href="#linkedin"></use>
-              </svg>
-            </a>
-            <a href="https://www.instagram.com/java.world" target="_blank" class="text-decoration-none">
-              <svg class="instagram" width="24" height="24">
-                <use xlink:href="#instagram"></use>
-              </svg>
-            </a>
-            <a href="https://dev.to/binath" target="_blank" class="text-decoration-none">
-              <svg class="devto" width="24" height="24">
-                <use xlink:href="#devto"></use>
-              </svg>
-            </a> -->
-          </div>
         </div>
-        
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+
+        <div class="d-flex align-items-center gap-2">
+          <label class="switch theme-toggle" aria-label="Toggle color theme">
+            <input class="switch__input" type="checkbox" role="switch" data-theme-toggle aria-pressed="false" />
+            <span class="switch__icon">
+              <span class="switch__icon-part switch__icon-part--1"></span>
+              <span class="switch__icon-part switch__icon-part--2"></span>
+              <span class="switch__icon-part switch__icon-part--3"></span>
+              <span class="switch__icon-part switch__icon-part--4"></span>
+              <span class="switch__icon-part switch__icon-part--5"></span>
+              <span class="switch__icon-part switch__icon-part--6"></span>
+              <span class="switch__icon-part switch__icon-part--7"></span>
+              <span class="switch__icon-part switch__icon-part--8"></span>
+              <span class="switch__icon-part switch__icon-part--9"></span>
+              <span class="switch__icon-part switch__icon-part--10"></span>
+              <span class="switch__icon-part switch__icon-part--11"></span>
+            </span>
+            <span class="switch__sr">Dark Mode</span>
+          </label>
+
+          <div class="btn-group btn-group-sm" role="group" aria-label="Language switcher">
+            <button class="btn btn-outline-dark active" type="button" data-lang="en">EN</button>
+            <button class="btn btn-outline-dark" type="button" data-lang="de">DE</button>
+            <button class="btn btn-outline-dark" type="button" data-lang="zh">中文</button>
+          </div>
+
+          <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
           <span class="navabar-toggler-icon">
             <svg class="text-primary menu" width="32" height="32">
               <use xlink:href="#menu"></use>
@@ -191,21 +163,21 @@
           <div class="offcanvas-body">
             <ul class="navbar-nav flex-grow-1 p-4">
               <li class="nav-item">
-                <a class="nav-link active text-uppercase ls-4 text-white" aria-current="page" href="index.html">Home</a>
+                <a class="nav-link active text-uppercase ls-4 text-white" aria-current="page" href="index.html" data-i18n="navHome">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active text-uppercase ls-4 text-white" aria-current="page" href="#about">About</a>
+                <a class="nav-link active text-uppercase ls-4 text-white" aria-current="page" href="#about" data-i18n="navAbout">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-uppercase ls-4 text-white" aria-current="page" href="#portfolio">Portfolio 
+                <a class="nav-link text-uppercase ls-4 text-white" aria-current="page" href="#portfolio" data-i18n="navPortfolio">Portfolio
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-uppercase ls-4 text-white" aria-current="page" href="#blog">Blog 
+                <a class="nav-link text-uppercase ls-4 text-white" aria-current="page" href="#blog" data-i18n="navBlog">Blog
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-uppercase ls-4 text-white" aria-current="page" href="#footer">Contact 
+                <a class="nav-link text-uppercase ls-4 text-white" aria-current="page" href="#footer" data-i18n="navContact">Contact
                 </a>
               </li>
             </ul>
@@ -221,14 +193,14 @@
         <div class="row align-items-center">
           <div class="col-md-6">
             <div class="text-content text-white py-2 my-2">
-              <p class="fs-4">
-                Cloud IoT Software
+              <p class="fs-4" data-i18n="heroIntro">
+                Industrial and Home Automation Solutions
               </p>
               <h1 class="display-1">
                 Binath <br> Perera
               </h1>
             </div>
-            <div class="row text-uppercase bg-black rounded-4 p-3 mt-2">
+            <!-- <div class="row text-uppercase bg-black rounded-4 p-3 mt-2"> -->
               <!-- <div class="col-md-6">
                 <div class="d-flex align-items-center gap-4">
                   <h2 class="display-2 text-light">
@@ -259,7 +231,7 @@
                   </p>
                 </div>
               </div> -->
-              <div class="col-md-3">
+              <!-- <div class="col-md-3">
                 <div class="d-flex align-items-center gap-4">
                   <h2 class="display-2 text-light">
                     34
@@ -268,8 +240,8 @@
                     projects completed
                   </p>
                 </div>
-              </div>
-            </div>
+              </div> -->
+            <!-- </div> -->
           </div>
         </div>
       </div>
@@ -286,16 +258,16 @@
               </svg>
             </div>
             <div class="text-md-start">
-              <h5>
-                Circuit Design
+              <h5 data-i18n="serviceTitleAutomation">
+                Automation Engineering
               </h5>
-              <p class="postf">
-                Custom PCB design and prototyping 
+              <p class="postf" data-i18n="serviceTextAutomation">
+                AIoT and IIoT solutions for industry 4.0 and smart homes.
               </p>
             </div>
           </div>
         </div>
-        <div class="col-lg-3">
+        <!-- <div class="col-lg-3">
           <div class="d-flex gap-4 align-items-start">
             <div class="icon">
               <svg class="text-primary notes" width="50" height="50">
@@ -311,7 +283,7 @@
               </p>
             </div>
           </div>
-        </div>
+        </div> -->
         <div class="col-lg-3">
           <div class="d-flex gap-4 align-items-start">
             <div class="icon">
@@ -320,11 +292,11 @@
               </svg>
             </div>
             <div class="text-md-start">
-              <h5>
-                Full Stack Development
+              <h5 data-i18n="serviceTitleAnalytics">
+                BI & Analytics Solutions
               </h5>
-              <p class="postf">
-                High performance web applications.
+              <p class="postf" data-i18n="serviceTextAnalytics">
+                Software applications/integrations to gain data-driven insights. Enhanced system monitoring, better decision-making and business growth.
               </p>
             </div>
           </div>
@@ -335,98 +307,21 @@
   <section>
     <div class="container">
       <div class="text-center pt-5">
-        <h2 class="display-3">
+        <h2 class="display-3" data-i18n="aboutTitle">
           About
         </h2>
       </div>
-      <div class="row">
-        <div class="col-lg-4">
-          <div class="h-100 bg-yellow p-4 rounded-4">
-            <h3>
-              Academic Qualifications
-            </h3>
-            <div class="py-4">
-              <p class="text-dark-emphasis">
-                2023-present
-              </p>
-              <h5>
-                BSc (Hons) in Electronics and Computer Science
-              </h5>
-              <p class="text-dark-emphasis">
-                University of Kelaniya
-              </p>
-            </div>
-            <!-- <p class="text-dark-emphasis">
-              2027 - 2029
-            </p>
-            <h5>
-              Masters in Automation
-            </h5>
-            <p class="text-dark-emphasis">
-              ETH Zurich, Switzerland
-            </p> -->
-          </div>
-        </div>
-
-        <div class="col-lg-4">
-          <div class="h-100 bg-green p-4 rounded-4">
-            <h3>
-              Professional Qualifications
-            </h3>
-            <div class="py-4">
-              <p class="text-dark-emphasis">
-                2022
-              </p>
-              <h5>
-                PGD in IT (Ofqual Level 6)
-              </h5>
-              <p class="text-dark-emphasis">
-                British Computer Society,
-              </p>
-            </div>
-            <!-- <p class="text-dark-emphasis">
-              2013 - present
-            </p> -->
-            <h5>
-              Certifications,
-            </h5>
-            <p class="text-dark-emphasis">
-              Oracle certified Java Developer SE 8 </br>
-              MBS - Professional Member of BCS  </br>
-            </p>
-          </div>
-        </div>
-
-        <div class="col-lg-4">
-          <div class="h-100 bg-teal p-4 rounded-4">
-            <h3>
-              Experience
-            </h3>
-            <div class="py-4">
-              <p class="text-dark-emphasis">
-                Nov 2022 - April 2024
-              </p>
-              <h5>
-                Software Engineer
-              </h5>
-              <p class="text-dark-emphasis">
-                Blue Lotus 360 Pvt Ltd, Colombo Sri Lanka
-              </p>
-            </div>
-            <div class="py-4">
-              <p class="text-dark-emphasis">
-                July 2025 - present
-              </p>
-              <h5>
-                AWS Student Builder Group Leader
-              </h5>
-              <p class="text-dark-emphasis">
-                Amazon Web Services
-              </p>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="d-flex flex-column justify-content-between">
+            <div>
+              <p class="text-muted mb-4">I am an automation enthusiast focused on building practical, reliable and secure solutions for industrial transformation.</p>
+              <div style="min-height: 180px;">
+                <p class="mb-0 text-muted"></p>
+              </div>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -471,7 +366,7 @@
   <section id="portfolio" class="portfolio py-5">
     <div class="container">
       <div class="text-center pt-5">
-        <h2 class="display-3">
+        <h2 class="display-3" data-i18n="portfolioTitle">
           Portfolio
         </h2>
       </div>
@@ -479,71 +374,71 @@
 
           <div id="filters" class="button-group d-flex flex-wrap gap-3 justify-content-center py-5" data-aos="fade-up">
             <a href="#" class="btn btn-primary text-decoration-none text-uppercase is-checked"
-              data-filter=".photography">PCB</a>
-            <a href="#" class="btn btn-primary text-decoration-none text-uppercase" data-filter=".graphicdesign">CAD
+              data-filter=".industry">Industrial Automation</a>
+            <a href="#" class="btn btn-primary text-decoration-none text-uppercase" data-filter=".home">Home Automation</a>
             <a href="#" class="btn btn-primary text-decoration-none text-uppercase"
-              data-filter=".illustrations">Embedded</a>
-            <a href="#" class="btn btn-primary text-decoration-none text-uppercase" data-filter=".branding">Full Stack</a>
+              data-filter=".analytics">Analytics</a>
+            <a href="#" class="btn btn-primary text-decoration-none text-uppercase" data-filter=".branding">Apps</a>
           </div>
         </div>
 
         <div class="grid p-0 clearfix row row-cols-2 row-cols-lg-3 row-cols-xl-4" data-aos="fade-up">
-          <div class="col mb-4 portfolio-item photography">
+          <div class="col mb-4 portfolio-item industry">
             <a href="images/illustration-1.jpg" data-lightbox="illustration-1" data-title="illustration-1"
               title="Sample Caption goes here for Portfolio Item 1."><img src="images/illustration-1.jpg"
                 class="img-fluid rounded-4" alt="portfolio"></a>
           </div>
-          <div class="col mb-4 portfolio-item photography graphicdesign illustrations">
+          <div class="col mb-4 portfolio-item industry home analytics">
             <a href="images/illustration-2.jpg" data-lightbox="illustration-2" data-title="illustration-2"
               title="Sample Caption goes here for Portfolio Item 2."><img src="images/illustration-2.jpg"
                 class="img-fluid rounded-4" alt="portfolio"></a>
           </div>
-          <div class="col mb-4 portfolio-item branding graphicdesign">
+          <div class="col mb-4 portfolio-item branding home">
             <a href="images/illustration-3.jpg" data-lightbox="illustration-3" data-title="illustration-3"
               title="Sample Caption goes here for Portfolio Item 3."><img src="images/illustration-3.jpg"
                 class="img-fluid rounded-4" alt="portfolio"></a>
           </div>
-          <div class="col mb-4 portfolio-item graphicdesign">
+          <div class="col mb-4 portfolio-item home">
             <a href="images/illustration-4.jpg" data-lightbox="illustration-4" data-title="illustration-4"
               title="Sample Caption goes here for Portfolio Item 4."><img src="images/illustration-4.jpg"
                 class="img-fluid rounded-4" alt="portfolio"></a>
           </div>
-          <div class="col mb-4 portfolio-item photography illustrations">
+          <div class="col mb-4 portfolio-item industry analytics">
             <a href="images/illustration-5.jpg" data-lightbox="illustration-5" data-title="illustration-5"
               title="Sample Caption goes here for Portfolio Item 5."><img src="images/illustration-5.jpg"
                 class="img-fluid rounded-4" alt="portfolio"></a>
           </div>
-          <div class="col mb-4 portfolio-item graphicdesign">
+          <div class="col mb-4 portfolio-item home">
             <a href="images/illustration-1.jpg" data-lightbox="illustration-1" data-title="illustration-1"
               title="Sample Caption goes here for Portfolio Item 6."><img src="images/illustration-1.jpg"
                 class="img-fluid rounded-4" alt="portfolio"></a>
           </div>
-          <div class="col mb-4 portfolio-item graphicdesign photography">
+          <div class="col mb-4 portfolio-item home industry">
             <a href="images/illustration-2.jpg" data-lightbox="illustration-2" data-title="illustration-2"
               title="Sample Caption goes here for Portfolio Item 7."><img src="images/illustration-2.jpg"
                 class="img-fluid rounded-4" alt="portfolio"></a>
           </div>
-          <div class="col mb-4 portfolio-item illustrations graphicdesign">
+          <div class="col mb-4 portfolio-item analytics home">
             <a href="images/illustration-3.jpg" data-lightbox="illustration-3" data-title="illustration-3"
               title="Sample Caption goes here for Portfolio Item 8."><img src="images/illustration-3.jpg"
                 class="img-fluid rounded-4" alt="portfolio"></a>
           </div>
-          <div class="col mb-4 portfolio-item branding photography graphicdesign">
+          <div class="col mb-4 portfolio-item branding industry home">
             <a href="images/illustration-4.jpg" data-lightbox="illustration-4" data-title="illustration-4"
               title="Sample Caption goes here for Portfolio Item 9."><img src="images/illustration-4.jpg"
                 class="img-fluid rounded-4" alt="portfolio"></a>
           </div>
-          <div class="col mb-4 portfolio-item illustrations graphicdesign branding">
+          <div class="col mb-4 portfolio-item analytics home branding">
             <a href="images/illustration-5.jpg" data-lightbox="illustration-5" data-title="illustration-5"
               title="Sample Caption goes here for Portfolio Item1 0."><img src="images/illustration-5.jpg"
                 class="img-fluid rounded-4" alt="portfolio"></a>
           </div>
-          <div class="col mb-4 portfolio-item photography">
+          <div class="col mb-4 portfolio-item industry">
             <a href="images/illustration-1.jpg" data-lightbox="illustration-1" data-title="illustration-1"
               title="Sample Caption goes here for Portfolio Item1 1."><img src="images/illustration-1.jpg"
                 class="img-fluid rounded-4" alt="portfolio"></a>
           </div>
-          <div class="col mb-4 portfolio-item photography">
+          <div class="col mb-4 portfolio-item industry">
             <a href="images/illustration-2.jpg" data-lightbox="illustration-2" data-title="illustration-2"
               title="Sample Caption goes here for Portfolio Item1 2."><img src="images/illustration-2.jpg"
                 class="img-fluid rounded-4" alt="portfolio"></a>
@@ -552,7 +447,7 @@
         </div>
 
         <div class="text-center p-3">
-          <a href="https://www.github.com/binathperera" target="_blank" class="btn btn-outline-dark btn-lg mt-3 text-uppercase text-decoration-none">
+          <a href="https://www.github.com/binathperera" target="_blank" class="btn btn-outline-dark btn-lg mt-3 text-uppercase text-decoration-none" data-i18n="portfolioButton">
             View All Works
           </a>
         </div>
@@ -651,7 +546,7 @@
   <section>
     <div class="container">
       <div class="text-center pt-5">
-        <h2 class="display-3">
+        <h2 class="display-3" data-i18n="faqTitle">
           FAQs
         </h2>
       </div>
@@ -667,12 +562,12 @@
               <button class="accordion-button collapsed" style="font-weight:bold;" type="button"
                 data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
                 aria-controls="collapseTwo">
-                What times are you available for calls?
+                <span data-i18n="faqQuestionOne">What times are you available for calls?</span>
               </button>
             </h5>
             <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordion-flush">
               <div class="accordion-body">
-                <p>I am available for calls from 9 AM to 5 PM GMT+5.30</p>
+                <p data-i18n="faqAnswerOne">I am available for calls from 9 AM to 5 PM GMT+5.30</p>
               </div>
             </div>
           </div>
@@ -681,12 +576,12 @@
               <button class="accordion-button collapsed" style="font-weight:bold;" type="button"
                 data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
                 aria-controls="collapseThree">
-                How do I get your services?
+                <span data-i18n="faqQuestionTwo">How do I get your services?</span>
               </button>
             </h5>
             <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordion-flush">
               <div class="accordion-body">
-                <p>For long-term projects, you can send me a message. For short-term projects
+                <p data-i18n="faqAnswerTwo">For long-term projects, you can send me a message. For short-term projects
                   please reach out on Upwork.</p>
               </div>
             </div>
@@ -697,12 +592,12 @@
               <button class="accordion-button collapsed" style="font-weight:bold;" type="button"
                 data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false"
                 aria-controls="collapseFive">
-                Will I get the source files of my order?
+                <span data-i18n="faqQuestionThree">Will I get the source files of my order?</span>
               </button>
             </h5>
             <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordion-flush">
               <div class="accordion-body">
-                <p>Yes, all source files including the documentation will be provided as requested.</p>
+                <p data-i18n="faqAnswerThree">Yes, all source files including the documentation will be provided as requested.</p>
               </div>
             </div>
           </div>
@@ -711,11 +606,11 @@
                 <button class="accordion-button collapsed" style="font-weight:bold;" type="button"
                   data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
                   aria-controls="collapseOne">
-                  Can I use credit cards for payment?
+                  <span data-i18n="faqQuestionFour">Can I use credit cards for payment?</span>
                 </button>
               </h5>
               <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordion-flush"" >
-                                <div class=" accordion-body"><p>No only Paypal and Bank Transfer is accepted.</p></div>
+                                <div class=" accordion-body"><p data-i18n="faqAnswerFour">No only Paypal and Bank Transfer is accepted.</p></div>
               </div>
             </div>
         </div>
@@ -727,10 +622,10 @@
   <section class="py-5" id="blog">
     <div class="container">
       <div class="text-center">
-        <h2 class="display-3">
+        <h2 class="display-3" data-i18n="blogTitle">
           Blog Posts
         </h2>
-        <p>
+        <p data-i18n="blogSubtitle">
           Find out my latest blog posts on Dev Community.
         </p>
       </div>
@@ -745,7 +640,7 @@
                 <p class="text-uppercase text-muted mt-3">
                   Design / Sept 12, 2022
                 </p>
-                <h3>
+                <h3 data-i18n="blogTitleOne">
                   Title 1
                 </h3>
               </div>
@@ -763,7 +658,7 @@
                 <p class="text-uppercase text-muted mt-3">
                   Design / Sept 12, 2022
                 </p>
-                <h3>
+                <h3 data-i18n="blogTitleTwo">
                   Title 2
                 </h3>
               </div>
@@ -781,7 +676,7 @@
                 <p class="text-uppercase text-muted mt-3">
                   Design / Sept 12, 2022
                 </p>
-                <h3>
+                <h3 data-i18n="blogTitleThree">
                   Title 3
                 </h3>
               </div>
@@ -799,7 +694,7 @@
                 <p class="text-uppercase text-muted mt-3">
                   Design / Sept 12, 2022
                 </p>
-                <h3>
+                <h3 data-i18n="blogTitleFour">
                   Title 4
                 </h3>
               </div>
@@ -809,7 +704,7 @@
         </div>
       </div>
       <div class="text-center">
-        <button type="button" class="btn btn-outline-dark btn-lg mt-3 btn-color text-uppercase" onclick="location.href='https://dev.to/binath'">
+        <button type="button" class="btn btn-outline-dark btn-lg mt-3 btn-color text-uppercase" onclick="location.href='https://dev.to/binath'" data-i18n="blogButton">
           View All Blogs
         </button>
       </div>
@@ -820,10 +715,10 @@
     <div class="container">
       <div class="row justify-content-center my-5">
         <div class="col-md-5">
-          <h6>
+          <h6 data-i18n="quickContactTitle">
             Quick Contact
           </h6>
-          <h2 class="display-3">
+          <h2 class="display-3" data-i18n="quickContactHeading">
             Leave a Message
           </h2>
           <p>
@@ -834,17 +729,17 @@
           <form id="contactForm">
             <div class="mb-3">
               <input type="text" class="form-control p-3 rounded-4" name="name" id="name" aria-describedby="nameHelpId"
-                placeholder="your name" required />
+                placeholder="your name" data-i18n-placeholder="namePlaceholder" required />
             </div>
             <div class="mb-3">
               <input type="email" class="form-control p-3 rounded-4" name="email" id="email" aria-describedby="emailHelpId"
-                placeholder="your email" required />
+                placeholder="your email" data-i18n-placeholder="emailPlaceholder" required />
             </div>
             <div class="mb-3">
-              <textarea class="form-control p-3 rounded-4" name="message" placeholder="your message" id="message" rows="3" required></textarea>
+              <textarea class="form-control p-3 rounded-4" name="message" placeholder="your message" id="message" rows="3" data-i18n-placeholder="messagePlaceholder" required></textarea>
             </div>
             <div class="d-grid">
-              <button type="submit" class="btn btn-dark btn-lg text-uppercase rounded-4" id="submitBtn">
+              <button type="submit" class="btn btn-dark btn-lg text-uppercase rounded-4" id="submitBtn" data-i18n="submitButton">
                 Submit
               </button>
             </div>
@@ -862,8 +757,8 @@
         <div class="col-lg-8">
           <div class="newsletter-content rounded-4 p-5">
             <div class="text-center mb-4">
-              <h2 class="display-5 mb-2 text-white">Subscribe to Newsletter</h2>
-              <p class="text-white-50">Get the latest updates about tech developments delivered to your inbox.</p>
+              <h2 class="display-5 mb-2 text-white" data-i18n="newsletterTitle">Subscribe to the Newsletter</h2>
+              <p class="text-white-50" data-i18n="newsletterText">Get the latest updates on Automation and Security delivered to your inbox.</p>
             </div>
             <form id="newsletterForm" class="newsletter-form">
               <div class="input-group input-group-lg">
@@ -872,10 +767,11 @@
                   class="form-control newsletter-input" 
                   id="newsletterEmail" 
                   placeholder="Enter your email address"
+                  data-i18n-placeholder="newsletterPlaceholder"
                   required
                   aria-label="Email address"
                 >
-                <button class="btn btn-primary" type="submit" id="subscribeBtn">
+                <button class="btn btn-primary" type="submit" id="subscribeBtn" data-i18n="newsletterButton">
                   Subscribe
                 </button>
               </div>
@@ -922,7 +818,7 @@
                 font-size: 16px;
                 cursor: pointer;
                 margin-top: 10px;
-              ">
+              " data-i18n="upworkButton">
                 Find my services on Upwork
               </button>
             </a>
@@ -934,14 +830,14 @@
             <div class="col-6">
               <ul class="list-unstyled">
                 <li>
-                  <a class="text-decoration-none text-white" href="index.html">Home</a>
+                  <a class="text-decoration-none text-white" href="index.html" data-i18n="footerHome">Home</a>
                 </li>
                 
                 <li>
-                  <a class="text-decoration-none text-white" href="#about">About</a>
+                  <a class="text-decoration-none text-white" href="#about" data-i18n="footerAbout">About</a>
                 </li>
                 <li>
-                  <a class="text-decoration-none text-white" href="#portfolio">Portfolio</a>
+                  <a class="text-decoration-none text-white" href="#portfolio" data-i18n="footerPortfolio">Portfolio</a>
                 </li>
               </ul>
             </div>
@@ -951,14 +847,14 @@
                   <svg class="devto" width="24" height="24">
                     <use xlink:href="#devto"></use>
                   </svg>
-                  Blog</a>
+                  <span data-i18n="footerBlog">Blog</span></a>
               </h6>
               
             </div>
           </div>
         </div>
         <div class="col-md-5">
-          <p>
+          <p data-i18n="footerEmailLabel">
             Email.
           </p>
           <h3>
@@ -989,6 +885,269 @@
 
   <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
   <script src="js/script.js"></script>
+  <script>
+    const themeToggleInput = document.querySelector('[data-theme-toggle]');
+
+    function getStoredTheme() {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        return savedTheme;
+      }
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    function applyTheme(theme) {
+      const selectedTheme = theme === 'dark' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', selectedTheme);
+      document.documentElement.setAttribute('data-bs-theme', selectedTheme);
+      if (themeToggleInput) {
+        themeToggleInput.checked = selectedTheme === 'dark';
+        themeToggleInput.setAttribute('aria-pressed', String(selectedTheme === 'dark'));
+      }
+      localStorage.setItem('theme', selectedTheme);
+    }
+
+    themeToggleInput?.addEventListener('change', () => {
+      applyTheme(themeToggleInput.checked ? 'dark' : 'light');
+    });
+
+    applyTheme(getStoredTheme());
+
+    const translations = {
+      en: {
+        navHome: 'Home',
+        navAbout: 'About',
+        navPortfolio: 'Portfolio',
+        navBlog: 'Blog',
+        navContact: 'Contact',
+        heroIntro: 'Industrial and Home Automation',
+        serviceTitleAutomation: 'Automation Systems Development',
+        serviceTextAutomation: 'AIoT and IIoT solutions for industry 4.0 and smart homes.',
+        serviceTitleAnalytics: 'Business Intelligence & Real Time Analytics',
+        serviceTextAnalytics: 'Software applications/integrations to gain data-driven insights. Enhanced system monitoring, better decision-making and business growth.',
+        aboutTitle: 'About',
+        academicTitle: 'Academic Qualifications',
+        academicDate: '2023-present',
+        academicDegree: 'BSc (Hons) in Electronics and Computer Science',
+        academicSchool: 'University of Kelaniya',
+        professionalTitle: 'Professional Qualifications',
+        professionalDate: '2022',
+        professionalDegree: 'PGD in IT (Ofqual Level 6)',
+        professionalSchool: 'British Computer Society,',
+        certificationsTitle: 'Certifications,',
+        certificationsText: 'Oracle certified Java Developer SE 8 <br> MBS - Professional Member of BCS <br>',
+        experienceTitle: 'Experience',
+        experienceDateOne: 'Nov 2022 - April 2024',
+        experienceRoleOne: 'Software Engineer',
+        experienceOrgOne: 'Blue Lotus 360 Pvt Ltd, Colombo Sri Lanka',
+        experienceDateTwo: 'July 2025 - present',
+        experienceRoleTwo: 'AWS Student Builder Group Leader',
+        experienceOrgTwo: 'Amazon Web Services',
+        portfolioTitle: 'Portfolio',
+        portfolioButton: 'View All Works',
+        faqTitle: 'FAQs',
+        faqQuestionOne: 'What times are you available for calls?',
+        faqAnswerOne: 'I am available for calls from 9 AM to 5 PM GMT+5.30',
+        faqQuestionTwo: 'How do I get your services?',
+        faqAnswerTwo: 'For long-term projects, you can send me a message. For short-term projects please reach out on Upwork.',
+        faqQuestionThree: 'Will I get the source files of my order?',
+        faqAnswerThree: 'Yes, all source files including the documentation will be provided as requested.',
+        faqQuestionFour: 'Can I use credit cards for payment?',
+        faqAnswerFour: 'No only Paypal and Bank Transfer is accepted.',
+        blogTitle: 'Blog Posts',
+        blogSubtitle: 'Find out my latest blog posts on Dev Community.',
+        blogTitleOne: 'Title 1',
+        blogTitleTwo: 'Title 2',
+        blogTitleThree: 'Title 3',
+        blogTitleFour: 'Title 4',
+        blogButton: 'View All Blogs',
+        quickContactTitle: 'Quick Contact',
+        quickContactHeading: 'Leave a Message',
+        namePlaceholder: 'your name',
+        emailPlaceholder: 'your email',
+        messagePlaceholder: 'your message',
+        submitButton: 'Submit',
+        newsletterTitle: 'Subscribe to the Newsletter',
+        newsletterText: 'Get the latest updates on Automation and Security delivered to your inbox.',
+        newsletterPlaceholder: 'Enter your email address',
+        newsletterButton: 'Subscribe',
+        upworkButton: 'Find my services on Upwork',
+        footerHome: 'Home',
+        footerAbout: 'About',
+        footerPortfolio: 'Portfolio',
+        footerBlog: 'Blog',
+        footerEmailLabel: 'Email.',
+      },
+      de: {
+        navHome: 'Startseite',
+        navAbout: 'Über mich',
+        navPortfolio: 'Portfolio',
+        navBlog: 'Blog',
+        navContact: 'Kontakt',
+        heroIntro: 'Lösungen für industrielle und private Automatisierung',
+        serviceTitleAutomation: 'Automatisierungsberatung',
+        serviceTextAutomation: 'AIoT- und IIoT-Lösungen für Industrie 4.0 und Smart Homes.',
+        serviceTitleAnalytics: 'BI- und Analyselösungen',
+        serviceTextAnalytics: 'Softwareanwendungen und Integrationen für datenbasierte Erkenntnisse. Verbesserte Systemüberwachung, bessere Entscheidungen und Unternehmenswachstum.',
+        aboutTitle: 'Über mich',
+        academicTitle: 'Akademische Qualifikationen',
+        academicDate: '2023-heute',
+        academicDegree: 'BSc (Hons) in Elektronik und Informatik',
+        academicSchool: 'Universität Kelaniya',
+        professionalTitle: 'Berufliche Qualifikationen',
+        professionalDate: '2022',
+        professionalDegree: 'PGD in IT (Ofqual Level 6)',
+        professionalSchool: 'British Computer Society,',
+        certificationsTitle: 'Zertifizierungen,',
+        certificationsText: 'Oracle-zertifizierter Java-Entwickler SE 8 <br> MBS - Professionelles Mitglied der BCS <br>',
+        experienceTitle: 'Erfahrung',
+        experienceDateOne: 'Nov. 2022 - April 2024',
+        experienceRoleOne: 'Softwareentwickler',
+        experienceOrgOne: 'Blue Lotus 360 Pvt Ltd, Colombo, Sri Lanka',
+        experienceDateTwo: 'Juli 2025 - heute',
+        experienceRoleTwo: 'AWS Student Builder Gruppenleiter',
+        experienceOrgTwo: 'Amazon Web Services',
+        portfolioTitle: 'Portfolio',
+        portfolioButton: 'Alle Werke ansehen',
+        faqTitle: 'Häufige Fragen',
+        faqQuestionOne: 'Zu welchen Zeiten sind Sie telefonisch erreichbar?',
+        faqAnswerOne: 'Ich bin von 9 bis 17 Uhr GMT+5.30 für Anrufe verfügbar.',
+        faqQuestionTwo: 'Wie bekomme ich Ihre Leistungen?',
+        faqAnswerTwo: 'Für langfristige Projekte können Sie mir eine Nachricht senden. Für kurzfristige Projekte wenden Sie sich bitte an Upwork.',
+        faqQuestionThree: 'Erhalte ich die Quellcodedateien meiner Bestellung?',
+        faqAnswerThree: 'Ja, alle Quelldateien inklusive Dokumentation werden wie angefordert bereitgestellt.',
+        faqQuestionFour: 'Kann ich Kreditkarten für die Zahlung verwenden?',
+        faqAnswerFour: 'Nein, nur PayPal und Banküberweisung werden akzeptiert.',
+        blogTitle: 'Blog-Beiträge',
+        blogSubtitle: 'Erfahren Sie mehr über meine neuesten Beiträge in der Dev Community.',
+        blogTitleOne: 'Titel 1',
+        blogTitleTwo: 'Titel 2',
+        blogTitleThree: 'Titel 3',
+        blogTitleFour: 'Titel 4',
+        blogButton: 'Alle Blogs ansehen',
+        quickContactTitle: 'Schnellkontakt',
+        quickContactHeading: 'Hinterlassen Sie eine Nachricht',
+        namePlaceholder: 'Ihr Name',
+        emailPlaceholder: 'Ihre E-Mail',
+        messagePlaceholder: 'Ihre Nachricht',
+        submitButton: 'Senden',
+        newsletterTitle: 'Newsletter abonnieren',
+        newsletterText: 'Erhalten Sie die neuesten Updates zu Automatisierung und Sicherheit direkt in Ihren Posteingang.',
+        newsletterPlaceholder: 'Geben Sie Ihre E-Mail-Adresse ein',
+        newsletterButton: 'Abonnieren',
+        upworkButton: 'Meine Dienstleistungen auf Upwork finden',
+        footerHome: 'Startseite',
+        footerAbout: 'Über mich',
+        footerPortfolio: 'Portfolio',
+        footerBlog: 'Blog',
+        footerEmailLabel: 'E-Mail.',
+      },
+      zh: {
+        navHome: '首页',
+        navAbout: '关于我',
+        navPortfolio: '作品集',
+        navBlog: '博客',
+        navContact: '联系',
+        heroIntro: '工业与家庭自动化解决方案',
+        serviceTitleAutomation: '自动化咨询',
+        serviceTextAutomation: '面向工业 4.0 和智能家居的 AIoT 与 IIoT 解决方案。',
+        serviceTitleAnalytics: '商业智能与数据分析解决方案',
+        serviceTextAnalytics: '用于获得数据驱动洞察的软件应用与集成。提升系统监控、优化决策并促进业务增长。',
+        aboutTitle: '关于我',
+        academicTitle: '学术资格',
+        academicDate: '2023-至今',
+        academicDegree: '电子与计算机科学学士（荣誉）',
+        academicSchool: '凯拉尼亚大学',
+        professionalTitle: '职业资格',
+        professionalDate: '2022',
+        professionalDegree: 'IT 研究生文凭（Ofqual Level 6）',
+        professionalSchool: '英国计算机学会,',
+        certificationsTitle: '认证,',
+        certificationsText: 'Oracle 认证 Java 开发者 SE 8 <br> MBS - BCS 专业会员 <br>',
+        experienceTitle: '经验',
+        experienceDateOne: '2022 年 11 月 - 2024 年 4 月',
+        experienceRoleOne: '软件工程师',
+        experienceOrgOne: 'Blue Lotus 360 Pvt Ltd, 科伦坡，斯里兰卡',
+        experienceDateTwo: '2025 年 7 月 - 至今',
+        experienceRoleTwo: 'AWS 学生构建者小组组长',
+        experienceOrgTwo: 'Amazon Web Services',
+        portfolioTitle: '作品集',
+        portfolioButton: '查看所有作品',
+        faqTitle: '常见问题',
+        faqQuestionOne: '你什么时间可以接听电话？',
+        faqAnswerOne: '我在 GMT+5.30 的每天 9:00 至 17:00 之间接受通话。',
+        faqQuestionTwo: '如何获得你的服务？',
+        faqAnswerTwo: '对于长期项目，您可以给我发消息。对于短期项目，请通过 Upwork 联系我。',
+        faqQuestionThree: '我能拿到订单的源文件吗？',
+        faqAnswerThree: '可以，所有源文件和文档都会按要求提供。',
+        faqQuestionFour: '我可以使用信用卡付款吗？',
+        faqAnswerFour: '不可以，只接受 PayPal 和银行转账。',
+        blogTitle: '博客文章',
+        blogSubtitle: '查看我在 Dev Community 上的最新博客文章。',
+        blogTitleOne: '标题 1',
+        blogTitleTwo: '标题 2',
+        blogTitleThree: '标题 3',
+        blogTitleFour: '标题 4',
+        blogButton: '查看所有博客',
+        quickContactTitle: '快速联系',
+        quickContactHeading: '留言',
+        namePlaceholder: '您的名字',
+        emailPlaceholder: '您的邮箱',
+        messagePlaceholder: '您的留言',
+        submitButton: '提交',
+        newsletterTitle: '订阅新闻通讯',
+        newsletterText: '将自动化与安全的最新动态直接发送到您的邮箱。',
+        newsletterPlaceholder: '请输入您的电子邮箱',
+        newsletterButton: '订阅',
+        upworkButton: '在 Upwork 上查看我的服务',
+        footerHome: '首页',
+        footerAbout: '关于我',
+        footerPortfolio: '作品集',
+        footerBlog: '博客',
+        footerEmailLabel: '电子邮箱。',
+      }
+    };
+
+    function applyLanguage(lang) {
+      const selected = translations[lang] ? lang : 'en';
+      document.documentElement.lang = selected;
+      const entries = translations[selected];
+
+      document.querySelectorAll('[data-i18n]').forEach((element) => {
+        const key = element.getAttribute('data-i18n');
+        if (entries[key]) {
+          if (element.hasAttribute('data-i18n-html')) {
+            element.innerHTML = entries[key];
+          } else {
+            element.textContent = entries[key];
+          }
+        }
+      });
+
+      document.querySelectorAll('[data-i18n-placeholder]').forEach((element) => {
+        const key = element.getAttribute('data-i18n-placeholder');
+        if (entries[key]) {
+          element.placeholder = entries[key];
+        }
+      });
+
+      document.querySelectorAll('[data-lang]').forEach((button) => {
+        const isActive = button.getAttribute('data-lang') === selected;
+        button.classList.toggle('btn-dark', isActive);
+        button.classList.toggle('btn-outline-dark', !isActive);
+        button.classList.toggle('active', isActive);
+      });
+
+      localStorage.setItem('preferredLanguage', selected);
+    }
+
+    document.querySelectorAll('[data-lang]').forEach((button) => {
+      button.addEventListener('click', () => applyLanguage(button.getAttribute('data-lang')));
+    });
+
+    const savedLanguage = localStorage.getItem('preferredLanguage') || 'en';
+    applyLanguage(savedLanguage);
+  </script>
 </body>
 
 </html>
