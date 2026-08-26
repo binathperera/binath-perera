@@ -812,6 +812,19 @@ a:hover {
     background-color: var(--bs-black) !important;
     color: var(--bs-white) !important;
   }
+  .display-1 {
+    font-size: 3rem; /* Adjust font size for mobile */
+    line-height: 1.2; /* Adjust line height for mobile */
+  }
+  .inner-banner {
+    background-image: url("../images/banner3.png");
+    background-size: 100% auto; /* Shows entire image */
+    background-repeat: no-repeat;
+    background-position: center;
+    /* Optional: Set specific width to maintain aspect ratio */
+    max-width: 100%;
+    aspect-ratio: 20/9; /* Adjust based on your image's actual ratio */
+  }
 }
 
 /* Newsletter Section Styles */
