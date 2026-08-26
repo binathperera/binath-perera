@@ -5,6 +5,11 @@
     // Set initial home section height based on viewport
     setInitialHomeHeight();
 
+    initHandModeToggle();
+
+    // Hide navbar name while hero section is visible
+    initNavbarNameVisibility();
+
     // masonoary //
 
     initIsotope();
@@ -81,6 +86,96 @@
 
     // Set the height as fixed pixels
     $(".banner").css("height", homeHeight + "px");
+  }
+
+  function initNavbarNameVisibility() {
+    var homeSection = document.getElementById("home");
+    var navbarName = document.querySelector(".navbar .name-fluid");
+    var navbar = document.querySelector(".navbar");
+
+    if (!homeSection || !navbarName) {
+      return;
+    }
+
+    function setNameHiddenState(isHidden) {
+      navbarName.classList.toggle("nav-name-hidden", isHidden);
+      if (navbar) {
+        navbar.classList.toggle("nav-controls-hidden", !isHidden);
+      }
+    }
+
+    function isHomeInView() {
+      var rect = homeSection.getBoundingClientRect();
+      return rect.top < window.innerHeight && rect.bottom > 0;
+    }
+
+    // Ensure correct state on first paint.
+    setNameHiddenState(isHomeInView());
+
+    if ("IntersectionObserver" in window) {
+      var observer = new IntersectionObserver(
+        function (entries) {
+          setNameHiddenState(entries[0].isIntersecting);
+        },
+        { threshold: 0.15 },
+      );
+
+      observer.observe(homeSection);
+      return;
+    }
+
+    // Fallback for older browsers without IntersectionObserver.
+    window.addEventListener("scroll", function () {
+      setNameHiddenState(isHomeInView());
+    });
+  }
+
+  function initHandModeToggle() {
+    var navbar = document.querySelector(".navbar");
+    var toggleButton = document.querySelector("[data-hand-toggle]");
+    var offcanvas = document.getElementById("offcanvasNavbar");
+    var menuIconUse = document.querySelector(".menu-icon-use");
+
+    if (!navbar || !toggleButton) {
+      return;
+    }
+
+    var storageKey = "handMode";
+
+    function setHandMode(mode) {
+      var isLeftMode = mode === "left";
+
+      navbar.classList.toggle("left-hand-mode", isLeftMode);
+
+      if (offcanvas) {
+        offcanvas.classList.toggle("offcanvas-start", isLeftMode);
+        offcanvas.classList.toggle("offcanvas-end", !isLeftMode);
+      }
+
+      if (menuIconUse) {
+        var iconRef = isLeftMode ? "#menu-left" : "#menu";
+        menuIconUse.setAttribute("xlink:href", iconRef);
+        menuIconUse.setAttribute("href", iconRef);
+      }
+
+      toggleButton.setAttribute("aria-pressed", String(isLeftMode));
+      toggleButton.setAttribute(
+        "aria-label",
+        isLeftMode ? "Switch to right-hand mode" : "Switch to left-hand mode",
+      );
+    }
+
+    var savedMode = localStorage.getItem(storageKey);
+    setHandMode(savedMode === "left" ? "left" : "right");
+
+    toggleButton.addEventListener("click", function () {
+      var nextMode = navbar.classList.contains("left-hand-mode")
+        ? "right"
+        : "left";
+
+      setHandMode(nextMode);
+      localStorage.setItem(storageKey, nextMode);
+    });
   }
 
   // Contact form submission to Google Sheets

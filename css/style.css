@@ -626,6 +626,103 @@ a:hover {
   font-weight: 900;
   letter-spacing: -0.08em;
 }
+
+.navbar .name-fluid {
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease;
+}
+
+.navbar .name-fluid.nav-name-hidden {
+  display: none;
+}
+
+.navbar-name-wrap .navbar-brand {
+  margin-right: 0;
+}
+
+.navbar .nav-aux-control {
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease;
+}
+
+.navbar.nav-controls-hidden .nav-aux-control {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.navbar .navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Right-hand mode order: hand, color, language, menu */
+.navbar .navbar-theme-control {
+  order: 1;
+}
+
+.navbar .navbar-language-control {
+  order: 2;
+}
+
+.navbar .navbar-menu-toggle {
+  order: 3;
+}
+
+.navbar.left-hand-mode .navbar-layout {
+  flex-direction: row-reverse;
+}
+
+.navbar.left-hand-mode .navbar-name-wrap {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+/* Left-hand mode order: menu, language, color, hand */
+.navbar.left-hand-mode .navbar-menu-toggle {
+  order: 1;
+}
+
+.navbar.left-hand-mode .navbar-language-control {
+  order: 2;
+}
+
+.navbar.left-hand-mode .navbar-theme-control {
+  order: 3;
+}
+
+.hand-toggle-btn {
+  min-width: 3rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding-inline: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.hand-toggle-btn .hand-label {
+  opacity: 0.55;
+  transition: opacity 0.2s ease;
+}
+
+.navbar:not(.left-hand-mode) .hand-toggle-btn .hand-label-rh,
+.navbar.left-hand-mode .hand-toggle-btn .hand-label-lh {
+  opacity: 1;
+}
+
+.navbar .menu {
+  color: #111111;
+}
+
+[data-theme="dark"] .navbar .menu {
+  color: #ffffff;
+}
+
 .name2-fluid {
   font-family: Helvetica, sans-serif;
   font-size: 3rem;
@@ -665,7 +762,7 @@ a:hover {
 /* Desktop and larger screens */
 @media screen and (min-width: 1024px) {
   .banner {
-    background-image: url("../images/banner2.png");
+    background-image: url("../images/banner3.png");
     background-size: 100% auto; /* Shows entire image */
     background-repeat: no-repeat;
     background-position: center;
