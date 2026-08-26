@@ -6,6 +6,7 @@
     setInitialHomeHeight();
 
     initHandModeToggle();
+    initScrollTopButton();
 
     // Hide navbar name while hero section is visible
     initNavbarNameVisibility();
@@ -175,6 +176,21 @@
 
       setHandMode(nextMode);
       localStorage.setItem(storageKey, nextMode);
+    });
+  }
+
+  function initScrollTopButton() {
+    var scrollTopButton = document.querySelector("[data-scroll-top]");
+
+    if (!scrollTopButton) {
+      return;
+    }
+
+    scrollTopButton.addEventListener("click", function () {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
     });
   }
 

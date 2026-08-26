@@ -121,6 +121,10 @@
             <button class="btn btn-outline-dark" type="button" data-lang="zh">中文</button>
           </div>
 
+          <button class="btn btn-outline-dark btn-sm navbar-top-button" type="button" aria-label="Scroll to top" data-scroll-top>
+            ↑
+          </button>
+
           <button class="navbar-toggler border-0 navbar-menu-toggle" type="button" data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
           <span class="navabar-toggler-icon">
@@ -173,6 +177,9 @@
               <h1 class="display-1">
                 Binath <br> Perera
               </h1>
+              <a id="cvbutton" class="btn btn-light btn-lg mt-3" href="files/Binath-Perera-CV.pdf" download>
+                Download Curriculum Vitae
+              </a>
             </div>
             <!-- <div class="row text-uppercase bg-black rounded-4 p-3 mt-2"> -->
               <!-- <div class="col-md-6">
@@ -221,7 +228,27 @@
       </div>
     </div>
   </section>
-  <section class="p-5 " id="about">
+  
+  <section id="about">
+    <div class="container">
+      <div class="text-center pt-5">
+        <h2 class="display-3" data-i18n="aboutTitle">
+          Profile
+        </h2>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="d-flex flex-column justify-content-between">
+            <div>
+              <p class="text-muted mb-4">I am an automation solutions developer focused on building practical, reliable and secure solutions for industrial transformation.</p>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="p-5">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-3">
@@ -241,23 +268,6 @@
             </div>
           </div>
         </div>
-        <!-- <div class="col-lg-3">
-          <div class="d-flex gap-4 align-items-start">
-            <div class="icon">
-              <svg class="text-primary notes" width="50" height="50">
-                <use xlink:href="#notes"></use>
-              </svg>
-            </div>
-            <div class="text-md-start">
-              <h5>
-                Embedded Software
-              </h5>
-              <p class="postf">
-                Reliable software for microcontrollers and real-time systems.
-              </p>
-            </div>
-          </div>
-        </div> -->
         <div class="col-lg-3">
           <div class="d-flex gap-4 align-items-start">
             <div class="icon">
@@ -278,28 +288,6 @@
       </div>
     </div>
   </section>
-  <section>
-    <div class="container">
-      <div class="text-center pt-5">
-        <h2 class="display-3" data-i18n="aboutTitle">
-          About
-        </h2>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <div class="d-flex flex-column justify-content-between">
-            <div>
-              <p class="text-muted mb-4">I am an automation enthusiast focused on building practical, reliable and secure solutions for industrial transformation.</p>
-              <div style="min-height: 180px;">
-                <p class="mb-0 text-muted"></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- <section class="py-5">
     <div class="container">
       <div class="rounded-4 p-5"
@@ -526,7 +514,7 @@
       </div>
       <div class="row mt-5">
         <div class="col-lg-6">
-          <img src="images/illustration-6.png" class="img-fluid">
+          <img src="images/banner4.png" class="img-fluid">
         </div>
         <div class="col-lg-6">
           <div class="accordion accordion-flush" id="accordion-flush">
@@ -561,32 +549,7 @@
             </div>
           </div>
           
-          <div class="accordion-item border mb-3 rounded-3">
-            <h5 class="accordion-header">
-              <button class="accordion-button collapsed" style="font-weight:bold;" type="button"
-                data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false"
-                aria-controls="collapseFive">
-                <span data-i18n="faqQuestionThree">Will I get the source files of my order?</span>
-              </button>
-            </h5>
-            <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordion-flush">
-              <div class="accordion-body">
-                <p data-i18n="faqAnswerThree">Yes, all source files including the documentation will be provided as requested.</p>
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item border mb-3 rounded-3">
-              <h5 class="accordion-header">
-                <button class="accordion-button collapsed" style="font-weight:bold;" type="button"
-                  data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
-                  aria-controls="collapseOne">
-                  <span data-i18n="faqQuestionFour">Can I use credit cards for payment?</span>
-                </button>
-              </h5>
-              <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordion-flush"" >
-                                <div class=" accordion-body"><p data-i18n="faqAnswerFour">No only Paypal and Bank Transfer is accepted.</p></div>
-              </div>
-            </div>
+          
         </div>
       </div>
     </div>
@@ -885,7 +848,7 @@
     const translations = {
       en: {
         navHome: 'Home',
-        navAbout: 'About',
+        navAbout: 'Profile',
         navPortfolio: 'Portfolio',
         navBlog: 'Blog',
         navContact: 'Contact',
@@ -894,7 +857,7 @@
         serviceTextAutomation: 'AIoT and IIoT solutions for industry 4.0 and smart homes.',
         serviceTitleAnalytics: 'Software Engineering',
         serviceTextAnalytics: 'Software applications/integrations to gain data-driven insights. Enhanced system monitoring, better decision-making and business growth.',
-        aboutTitle: 'About',
+        aboutTitle: 'Profile',
         academicTitle: 'Academic Qualifications',
         academicDate: '2023-present',
         academicDegree: 'BSc (Hons) in Electronics and Computer Science',

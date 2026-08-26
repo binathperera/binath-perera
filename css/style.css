@@ -230,6 +230,22 @@ textarea.form-control::placeholder {
   background-color: var(--surface-bg) !important;
 }
 
+.navbar {
+  transition: background-color 0.25s ease;
+}
+
+.navbar.nav-controls-hidden.bg-white {
+  background-color: #f3f5f8 !important;
+}
+
+[data-theme="dark"] .navbar.bg-white {
+  background-color: var(--body-bg) !important;
+}
+
+[data-theme="dark"] .navbar.nav-controls-hidden.bg-white {
+  background-color: var(--surface-bg) !important;
+}
+
 .navbar .navbar-toggler,
 .navbar .theme-toggle {
   color: var(--text-color);
@@ -668,8 +684,16 @@ a:hover {
   order: 2;
 }
 
-.navbar .navbar-menu-toggle {
+.navbar .navbar-top-button {
   order: 3;
+  display: none;
+  min-width: 2.2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.navbar .navbar-menu-toggle {
+  order: 4;
 }
 
 .navbar.left-hand-mode .navbar-layout {
@@ -687,11 +711,15 @@ a:hover {
 }
 
 .navbar.left-hand-mode .navbar-language-control {
+  order: 3;
+}
+
+.navbar.left-hand-mode .navbar-top-button {
   order: 2;
 }
 
 .navbar.left-hand-mode .navbar-theme-control {
-  order: 3;
+  order: 4;
 }
 
 .hand-toggle-btn {
@@ -721,6 +749,12 @@ a:hover {
 
 [data-theme="dark"] .navbar .menu {
   color: #ffffff;
+}
+
+.navbar.nav-controls-hidden .navbar-top-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .name2-fluid {
@@ -864,4 +898,15 @@ a:hover {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+#cvbutton {
+  background-color: #131945;
+  color: #e5e6ef;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
 }
