@@ -10,6 +10,7 @@
 
     // Hide navbar name while hero section is visible
     initNavbarNameVisibility();
+    initDevtoPosts();
 
     // masonoary //
 
@@ -192,6 +193,98 @@
         behavior: "smooth",
       });
     });
+  }
+
+  function initDevtoPosts() {
+    var blogContainer = document.getElementById("blog-posts-container");
+
+    if (!blogContainer || !window.fetch) {
+      return;
+    }
+
+    var username = "binath";
+    var apiUrl =
+      "https://dev.to/api/articles?username=" +
+      encodeURIComponent(username) +
+      "&per_page=4";
+    var fallbackImages = [
+      "images/post-thumb-1.jpg",
+      "images/post-thumb-2.jpg",
+      "images/post-thumb-3.jpg",
+      "images/post-thumb-4.jpg",
+    ];
+
+    fetch(apiUrl)
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error("Failed to fetch Dev.to posts");
+        }
+        return response.json();
+      })
+      .then(function (posts) {
+        if (!Array.isArray(posts) || posts.length === 0) {
+          return;
+        }
+
+        var topPosts = posts.slice(0, 4);
+        var postCardsHtml = topPosts
+          .map(function (post, index) {
+            var coverImage = post.cover_image || fallbackImages[index % 4];
+            var publishedDate = post.published_at
+              ? new Date(post.published_at).toLocaleDateString(undefined, {
+                  year: "numeric",
+                  month: "short",
+                  day: "numeric",
+                })
+              : "";
+            var primaryTag =
+              post.tag_list && post.tag_list.length
+                ? post.tag_list[0]
+                : "Dev.to";
+
+            return (
+              '<div class="col-lg-6 p-3">' +
+              '<a class="post-item p-3 border rounded-5 d-block text-decoration-none" href="' +
+              escapeHtml(post.url) +
+              '" target="_blank" rel="noopener noreferrer">' +
+              '<div class="row g-md-5">' +
+              '<div class="col-lg-5">' +
+              '<img src="' +
+              escapeHtml(coverImage) +
+              '" class="img-fluid rounded-4" alt="' +
+              escapeHtml(post.title) +
+              '">' +
+              "</div>" +
+              '<div class="col-lg-7">' +
+              '<p class="text-uppercase text-muted mt-3">' +
+              escapeHtml(primaryTag) +
+              (publishedDate ? " / " + escapeHtml(publishedDate) : "") +
+              "</p>" +
+              '<h3 class="text-body">' +
+              escapeHtml(post.title) +
+              "</h3>" +
+              "</div>" +
+              "</div>" +
+              "</a>" +
+              "</div>"
+            );
+          })
+          .join("");
+
+        blogContainer.innerHTML = postCardsHtml;
+      })
+      .catch(function (error) {
+        console.warn("Unable to load Dev.to posts:", error);
+      });
+  }
+
+  function escapeHtml(value) {
+    return String(value)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/\"/g, "&quot;")
+      .replace(/'/g, "&#39;");
   }
 
   // Contact form submission to Google Sheets
