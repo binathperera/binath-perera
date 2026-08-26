@@ -15,6 +15,7 @@
     // masonoary //
 
     initIsotope();
+    initGithubPortfolio();
 
     // lightbox
 
@@ -58,6 +59,7 @@
       var $grid = $(".grid").isotope({
         itemSelector: ".portfolio-item",
         // layoutMode: 'fitRows',
+        transitionDuration: "0.45s",
         filter: filterValue,
       });
 
@@ -276,6 +278,273 @@
       .catch(function (error) {
         console.warn("Unable to load Dev.to posts:", error);
       });
+  }
+
+  function initGithubPortfolio() {
+    var portfolioGrid = document.querySelector(".portfolio .grid");
+    var filterGroup = document.getElementById("filters");
+
+    if (!portfolioGrid || !window.fetch) {
+      return;
+    }
+
+    var username = "binathperera";
+    var apiUrl =
+      "https://api.github.com/users/" +
+      encodeURIComponent(username) +
+      "/repos?sort=updated&per_page=50&type=public";
+
+    fetch(apiUrl, {
+      headers: {
+        Accept: "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2022-11-28",
+      },
+    })
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error("Failed to fetch GitHub repositories");
+        }
+        return response.json();
+      })
+      .then(function (repos) {
+        if (!Array.isArray(repos) || repos.length === 0) {
+          return;
+        }
+
+        var primaryRepos = repos.filter(function (repo) {
+          return !repo.fork;
+        });
+        var repoList = primaryRepos.length ? primaryRepos : repos;
+
+        var limits = {
+          apps: 6,
+          analytics: 6,
+          home: 6,
+          industry: 6,
+        };
+        var counts = {
+          apps: 0,
+          analytics: 0,
+          home: 0,
+          industry: 0,
+        };
+
+        var categorizedRepos = [];
+
+        repoList.forEach(function (repo) {
+          var description = (repo.description || "").toLowerCase();
+          var topics = Array.isArray(repo.topics) ? repo.topics : [];
+          var matchedCategories = getPortfolioCategories(description, topics);
+
+          var availableCategories = matchedCategories.filter(
+            function (category) {
+              return counts[category] < limits[category];
+            },
+          );
+
+          if (!availableCategories.length) {
+            return;
+          }
+
+          availableCategories.forEach(function (category) {
+            counts[category] += 1;
+          });
+
+          categorizedRepos.push({
+            repo: repo,
+            categories: availableCategories,
+          });
+        });
+
+        if (!categorizedRepos.length) {
+          return;
+        }
+
+        var cardsHtml = categorizedRepos
+          .map(function (entry) {
+            var repo = entry.repo;
+            var categories = entry.categories;
+            var language = repo.language || "General";
+            var updatedDate = repo.updated_at
+              ? new Date(repo.updated_at).toLocaleDateString(undefined, {
+                  year: "numeric",
+                  month: "short",
+                  day: "numeric",
+                })
+              : "";
+            var description = repo.description || "Public project on GitHub.";
+            var categoryClasses = categories.join(" ");
+
+            return (
+              '<div class="col mb-4 portfolio-item github-project ' +
+              escapeHtml(categoryClasses) +
+              '">' +
+              '<a href="' +
+              escapeHtml(repo.html_url) +
+              '" target="_blank" rel="noopener noreferrer" class="card h-100 border rounded-4 text-decoration-none">' +
+              '<div class="card-body d-flex flex-column gap-3">' +
+              '<p class="text-uppercase text-muted m-0">' +
+              escapeHtml(language) +
+              (updatedDate ? " / " + escapeHtml(updatedDate) : "") +
+              "</p>" +
+              '<h5 class="card-title m-0 text-body">' +
+              escapeHtml(repo.name) +
+              "</h5>" +
+              '<p class="card-text text-muted m-0">' +
+              escapeHtml(description) +
+              "</p>" +
+              '<div class="mt-auto d-flex gap-3 text-muted small">' +
+              "<span>★ " +
+              escapeHtml(repo.stargazers_count) +
+              "</span>" +
+              "<span>⑂ " +
+              escapeHtml(repo.forks_count) +
+              "</span>" +
+              "</div>" +
+              "</div>" +
+              "</a>" +
+              "</div>"
+            );
+          })
+          .join("");
+
+        portfolioGrid.innerHTML = cardsHtml;
+
+        refreshPortfolioLayout(filterGroup);
+      })
+      .catch(function (error) {
+        console.warn("Unable to load GitHub projects:", error);
+      });
+  }
+
+  function getPortfolioCategories(description, topics) {
+    var normalizedTopics = Array.isArray(topics)
+      ? topics.map(function (topic) {
+          return normalizeTopicSlug(topic);
+        })
+      : [];
+    var descriptionText = normalizeForKeywordMatch(description || "");
+
+    // Prefer explicit GitHub topics first.
+    var categories = getCategoriesFromTopics(normalizedTopics);
+
+    // Fallback to description-based matching if topics are not categorized.
+    if (!categories.length) {
+      categories = getCategoriesFromText(descriptionText);
+    }
+
+    if (!categories.length) {
+      categories.push("apps");
+    }
+
+    return categories;
+  }
+
+  function getCategoriesFromTopics(topics) {
+    var categoryMap = {
+      app: "apps",
+      analytics: "analytics",
+      "home-automation": "home",
+      "industrial-automation": "industry",
+    };
+    var categories = [];
+
+    (topics || []).forEach(function (topic) {
+      var mappedCategory = categoryMap[topic];
+      if (mappedCategory && categories.indexOf(mappedCategory) === -1) {
+        categories.push(mappedCategory);
+      }
+    });
+
+    return categories;
+  }
+
+  function getCategoriesFromText(text) {
+    var categories = [];
+
+    if (/\bapp\b|\bapps\b|\bapplication\b|\bwebapp\b|\bmobile\b/.test(text)) {
+      categories.push("apps");
+    }
+
+    if (
+      /\banalytic\b|\banalytics\b|\bdata\b|\bdashboard\b|\bvisualization\b/.test(
+        text,
+      )
+    ) {
+      categories.push("analytics");
+    }
+
+    if (
+      /\bhome\b|\bsmart\s+home\b|\bdomotic\b|\bhome\s+automation\b|\bhome\-automation\b/.test(
+        text,
+      )
+    ) {
+      categories.push("home");
+    }
+
+    if (
+      /\bindustrial\b|\bindustry\b|\biiot\b|\bplc\b|\bscada\b|\bfactory\b|\bindustrial\-automation\b/.test(
+        text,
+      )
+    ) {
+      categories.push("industry");
+    }
+
+    return categories;
+  }
+
+  function normalizeForKeywordMatch(value) {
+    return String(value || "")
+      .toLowerCase()
+      .replace(/[-_/.]+/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  function normalizeTopicSlug(value) {
+    return String(value || "")
+      .toLowerCase()
+      .trim()
+      .replace(/[\s_]+/g, "-")
+      .replace(/[^a-z0-9-]/g, "")
+      .replace(/-+/g, "-");
+  }
+
+  function refreshPortfolioLayout(filterGroup) {
+    if (!window.jQuery || !jQuery.fn.isotope) {
+      return;
+    }
+
+    var $grid = jQuery(".grid");
+
+    if (!$grid.length) {
+      return;
+    }
+
+    if ($grid.data("isotope")) {
+      $grid.isotope("reloadItems");
+      $grid.isotope({ filter: ".apps", transitionDuration: "0.45s" });
+
+      if (filterGroup) {
+        var buttons = filterGroup.querySelectorAll("a");
+        buttons.forEach(function (button) {
+          button.classList.remove("is-checked");
+        });
+
+        var defaultButton = filterGroup.querySelector('a[data-filter=".apps"]');
+        if (defaultButton) {
+          defaultButton.classList.add("is-checked");
+        }
+      }
+
+      return;
+    }
+
+    $grid.isotope({
+      itemSelector: ".portfolio-item",
+      transitionDuration: "0.45s",
+      filter: ".apps",
+    });
   }
 
   function escapeHtml(value) {
