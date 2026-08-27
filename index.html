@@ -735,87 +735,72 @@
   </section>
 
   <footer id="footer" class="bg-black text-white py-5">
-    <div class="container-sm col-lg-10">
-      <div class="row g-md-5 my-5">
-        <div class="col-md-3">
-          <div class="info-box">
-           
-            <div class="social-links">
-                <a href="https://github.com/binathperera" target="_blank" class="text-decoration-none">
-                <svg class="github" width="24" height="24">
-                  <use xlink:href="#github"></use>
-                </svg>
-              </a>
-              <a href="https://www.linkedin.com/in/binathperera/" target="_blank" class="text-decoration-none">
-                <svg class="linkedin" width="24" height="24">
-                  <use xlink:href="#linkedin"></use>
-                </svg>
-              </a>
-              <a href="https://www.instagram.com/java.world" target="_blank" class="text-decoration-none">
-                <svg class="instagram" width="24" height="24">
-                  <use xlink:href="#instagram"></use>
-                </svg>
-              </a>
-              <br>
-              <a href="https://www.upwork.com/freelancers/~0160c6f010c2601042" target="_blank" style="text-decoration:none;">
-              <button style="
-                background-color: #14a800;
-                color: white;
-                padding: 12px 24px;
-                border: none;
-                border-radius: 6px;
-                font-size: 16px;
-                cursor: pointer;
-                margin-top: 10px;
-              " data-i18n="upworkButton">
-                Find my services on Upwork
-              </button>
+  <div class="container">
+    <!-- Changed row margins and added gap (g-4) for consistent grid spacing -->
+    <div class="row g-4 my-4">
+      
+      <!-- Column 1: Socials & Upwork -->
+      <div class="col-md-3 mb-4 mb-md-0">
+        <div class="info-box">
+          <!-- Added flexbox and gap for spacing between social icons -->
+          <div class="social-links d-flex align-items-center gap-3 mb-4">
+            <a href="https://github.com/binathperera" target="_blank" class="text-decoration-none text-white">
+              <svg class="github" width="24" height="24"><use xlink:href="#github"></use></svg>
             </a>
-            </div>
+            <a href="https://www.linkedin.com/in/binathperera/" target="_blank" class="text-decoration-none text-white">
+              <svg class="linkedin" width="24" height="24"><use xlink:href="#linkedin"></use></svg>
+            </a>
           </div>
-        </div>
-        <div class="col-md-3">
-          <div class="row">
-            
-              <ul class="list-unstyled">
-                <li>
-                  <a class="text-decoration-none text-white" href="index.html" data-i18n="footerHome">Home</a>
-                </li>
-                
-                <li>
-                  <a class="text-decoration-none text-white" href="#about" data-i18n="footerAbout">About</a>
-                </li>
-                <li>
-                  <a class="text-decoration-none text-white" href="#portfolio" data-i18n="footerPortfolio">Portfolio</a>
-                </li>
-              </ul>
-            
-            
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="row">
-              <h6>
-                <a class="text-decoration-none text-white" target="_blank" href="https://dev.to/binath">
-                  <svg class="devto" width="24" height="24">
-                    <use xlink:href="#devto"></use>
-                  </svg>
-                  <span data-i18n="footerBlog">Blog</span></a>
-              </h6>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <p data-i18n="footerEmailLabel">
-            Email.
-          </p>
-          <h3>
-            <a href="mailto:hello@binath.com" class="text-white text-decoration-none">hello@binath.com</a>
-          </h3>
+          <!-- Made the button span 100% width on mobile for a cleaner block look -->
+          <a href="https://www.upwork.com/freelancers/~0160c6f010c2601042" target="_blank" class="text-decoration-none d-block">
+            <button class="btn w-100" style="background-color: #131742; color: white; padding: 12px 24px; border: none; border-radius: 6px; font-weight: 600;" data-i18n="upworkButton" data-i18n-html>
+              Find my services on <img src="https://www.vectorlogo.zone/logos/upwork/upwork-ar21.svg" alt="Upwork" style="width: 100px; height: auto;">
+            </button>
+          </a>
         </div>
       </div>
-    </div>
-  </footer>
 
+      <!-- Column 2: Navigation Links -->
+      <div class="col-md-3 mb-4 mb-md-0 navlinks-footer">
+        <!-- Added d-flex flex-column gap-3 to space out the list items -->
+        <ul class="list-unstyled d-flex flex-column gap-3 m-0">
+          <li>
+            <a class="text-decoration-none text-white opacity-75" href="index.html" data-i18n="footerHome">Home</a>
+          </li>
+          <li>
+            <a class="text-decoration-none text-white opacity-75" href="#about" data-i18n="footerAbout">Profile</a>
+          </li>
+          <li>
+            <a class="text-decoration-none text-white opacity-75" href="#portfolio" data-i18n="footerPortfolio">Portfolio</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Blog -->
+      <div class="col-md-3 mb-4 mb-md-0">
+        <h6 class="m-0">
+          <!-- Added flexbox to vertically align the icon and text perfectly -->
+          <a class="text-decoration-none text-white opacity-75 d-flex align-items-center gap-2" target="_blank" href="https://dev.to/binath">
+            <svg class="devto" width="24" height="24">
+              <use xlink:href="#devto"></use>
+            </svg>
+            <span data-i18n="footerBlog">Blog</span>
+          </a>
+        </h6>
+      </div>
+
+      <!-- Column 4: Email -->
+      <div class="col-md-3">
+        <!-- Changed to text-muted for better visual hierarchy -->
+        <p class="text-secondary mb-2" data-i18n="footerEmailLabel">Email.</p>
+        <h4>
+          <a href="mailto:hello@binath.com" class="text-white text-decoration-none">contact@binath.com</a>
+        </h4>
+      </div>
+
+    </div>
+  </div>
+</footer>
   <!-- Bootstrap JavaScript Libraries -->
   <script src="js/jquery-1.11.0.min.js"></script> <!-- jquery file-->
 
@@ -919,9 +904,9 @@
         newsletterText: 'Get the latest updates on Automation and Security delivered to your inbox.',
         newsletterPlaceholder: 'Enter your email address',
         newsletterButton: 'Subscribe',
-        upworkButton: 'Find my services on Upwork',
+        upworkButton: 'Find my services on <img src="https://www.vectorlogo.zone/logos/upwork/upwork-ar21.svg" alt="Upwork" style="width: 100px; height: auto;">',
         footerHome: 'Home',
-        footerAbout: 'About',
+        footerAbout: 'Profile',
         footerPortfolio: 'Portfolio',
         footerBlog: 'Blog',
         footerEmailLabel: 'Email.',
@@ -983,7 +968,7 @@
         newsletterText: 'Erhalten Sie die neuesten Updates zu Automatisierung und Sicherheit direkt in Ihren Posteingang.',
         newsletterPlaceholder: 'Geben Sie Ihre E-Mail-Adresse ein',
         newsletterButton: 'Abonnieren',
-        upworkButton: 'Meine Dienstleistungen auf Upwork finden',
+        upworkButton: 'Meine Dienstleistungen auf <img src="https://www.vectorlogo.zone/logos/upwork/upwork-ar21.svg" alt="Upwork" style="width: 100px; height: auto;"> finden',
         footerHome: 'Startseite',
         footerAbout: 'Über mich',
         footerPortfolio: 'Portfolio',
@@ -1047,7 +1032,7 @@
         newsletterText: '将自动化与安全的最新动态直接发送到您的邮箱。',
         newsletterPlaceholder: '请输入您的电子邮箱',
         newsletterButton: '订阅',
-        upworkButton: '在 Upwork 上查看我的服务',
+        upworkButton: '在 <img src="https://www.vectorlogo.zone/logos/upwork/upwork-ar21.svg" alt="Upwork" style="width: 100px; height: auto;"> 上查看我的服务',
         footerHome: '首页',
         footerAbout: '关于我',
         footerPortfolio: '作品集',

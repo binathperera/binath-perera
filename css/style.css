@@ -775,6 +775,13 @@ a:hover {
 #footer .social-links svg {
   color: #fff;
 }
+#footer .container {
+  max-width: 80%;
+}
+#footer .navlinks-footer {
+  text-align: center;
+}
+
 #home {
   /* Height will be set by JavaScript based on initial viewport */
   min-height: 500px; /* Fallback height in case JavaScript doesn't load */
