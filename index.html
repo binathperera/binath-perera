@@ -548,7 +548,20 @@
               </div>
             </div>
           </div>
-          
+          <div class="accordion-item border mb-3 rounded-3">
+            <h5 class="accordion-header">
+              <button class="accordion-button collapsed" style="font-weight:bold;" type="button"
+                data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
+                aria-controls="collapseThree">
+                <span data-i18n="faqQuestionThree">Where are you based?</span>
+              </button>
+            </h5>
+            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordion-flush">
+              <div class="accordion-body">
+                <p data-i18n="faqAnswerThree">I'm based in Colombo, Sri Lanka (GMT+5.30)</p>
+              </div>
+            </div>
+          </div>
           
         </div>
       </div>
@@ -699,7 +712,7 @@
             </div>
             <form id="newsletterForm" class="newsletter-form">
               <div class="input-group input-group-lg">
-                <input 
+                <div><input 
                   type="email" 
                   class="form-control newsletter-input" 
                   id="newsletterEmail" 
@@ -707,10 +720,11 @@
                   data-i18n-placeholder="newsletterPlaceholder"
                   required
                   aria-label="Email address"
-                >
+                ></div>
+                <div>
                 <button class="btn btn-primary" type="submit" id="subscribeBtn" data-i18n="newsletterButton">
                   Subscribe
-                </button>
+                </button></div>
               </div>
               <div id="newsletterMessage" class="mt-3" style="display: none;"></div>
             </form>
@@ -880,12 +894,12 @@
         portfolioTitle: 'Portfolio',
         portfolioButton: 'View All Works',
         faqTitle: 'FAQs',
-        faqQuestionOne: 'What times are you available for calls?',
-        faqAnswerOne: 'I am available for calls from 9 AM to 5 PM GMT+5.30',
+        faqQuestionOne: 'How do I contact you?',
+        faqAnswerOne: 'Please send an email to "contact@binath.com". My time zone is GMT+5.30',
         faqQuestionTwo: 'How do I get your services?',
         faqAnswerTwo: 'For long-term projects, you can send me a message. For short-term projects please reach out on Upwork.',
-        faqQuestionThree: 'Will I get the source files of my order?',
-        faqAnswerThree: 'Yes, all source files including the documentation will be provided as requested.',
+        faqQuestionThree: 'Where are you based?',
+        faqAnswerThree: "I'm based in Colombo, Sri Lanka (GMT+5.30)",
         faqQuestionFour: 'Can I use credit cards for payment?',
         faqAnswerFour: 'No only Paypal and Bank Transfer is accepted.',
         blogTitle: 'Blog Posts',
