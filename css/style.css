@@ -69,7 +69,7 @@ body [data-bs-theme="light"] {
   --bs-green: #f5f8f1;
   --bs-teal: #efe8ef;
   --bs-cyan: #f3f3f3;
-  --bs-black: #111111;
+  --bs-black: #000000;
   --bs-white: #ffffff;
   --bs-gray: #777777;
   --bs-info: #c3c3c3;
@@ -672,7 +672,16 @@ a:hover {
 .navbar .navbar-actions {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 0.5rem;
+}
+.navbar:not(.left-hand-mode) .navbar-actions {
+  margin-left: auto;
+}
+
+/* Left-Hand Mode: Push buttons to the left */
+.navbar.left-hand-mode .navbar-actions {
+  margin-right: auto;
 }
 
 /* Right-hand mode order: hand, color, language, menu */
@@ -817,13 +826,13 @@ a:hover {
     line-height: 1.2; /* Adjust line height for mobile */
   }
   .inner-banner {
-    background-image: url("../images/banner3.png");
+    background-image: url("../images/banner5.png");
     background-size: 100% auto; /* Shows entire image */
     background-repeat: no-repeat;
     background-position: center;
     /* Optional: Set specific width to maintain aspect ratio */
     max-width: 100%;
-    aspect-ratio: 20/9; /* Adjust based on your image's actual ratio */
+    aspect-ratio: 1/1; /* Adjust based on your image's actual ratio */
   }
 }
 
