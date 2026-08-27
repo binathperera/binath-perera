@@ -578,7 +578,7 @@
 
       // Replace this URL with your Google Apps Script web app URL
       var scriptURL =
-        "https://script.google.com/macros/s/AKfycbyAyXL5Fy_d-hY8wFPC306VPeONo1UestUJXV2HP--AdJxjf_rHxffFe5li0fZYMytZ/exec";
+        "https://script.google.com/macros/s/AKfycbzwXm1lb7phu1AqKcsZf5xDg30auZugaZGr3xQ-La6VmQqXjSBLp2614qmY9PfwZjE/exec";
 
       $.ajax({
         url: scriptURL,
