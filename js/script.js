@@ -588,7 +588,7 @@
         success: function (response) {
           responseMessage
             .html(
-              '<div class="alert alert-success">Thank you! Your message has been sent successfully.</div>',
+              '<div class="alert alert-success">Thank you, your message has been received.</div>',
             )
             .show();
           $("#contactForm")[0].reset();
@@ -601,7 +601,7 @@
             .show();
         },
         complete: function () {
-          submitBtn.prop("disabled", false).text("Submit");
+          submitBtn.prop("disabled", false).text("Send");
         },
       });
     });

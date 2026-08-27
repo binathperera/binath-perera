@@ -51,7 +51,7 @@
   --bs-link-hover-color: #f0756c;
   --bs-link-hover-color-rgb: 240, 117, 108;
 
-  --bs-primary: #f0756c;
+  --bs-primary: #1c336c;
   --bs-primary-rgb: 240, 117, 108;
   --bs-body-color: #111111;
   --bs-info: #c3c3c3;
@@ -175,10 +175,10 @@ textarea.form-control::placeholder {
 
 #contactForm .btn-dark:hover,
 #contactForm .btn-dark:focus {
-  background-color: #e9685d;
-  border-color: #e9685d;
+  background-color: #151b58;
+  border-color: #181834;
   color: #ffffff;
-  box-shadow: 0 4px 12px rgba(240, 117, 108, 0.35);
+  box-shadow: 0 4px 12px rgba(139, 153, 210, 0.438);
 }
 
 #responseMessage {

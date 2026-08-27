@@ -523,12 +523,12 @@
           <div class="accordion-item border mb-3 rounded-3">
             <h5 class="accordion-header">
               <button class="accordion-button collapsed" style="font-weight:bold;" type="button"
-                data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
-                aria-controls="collapseTwo">
+                data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false"
+                aria-controls="collapseOne">
                 <span data-i18n="faqQuestionOne">How do I contact you?</span>
               </button>
             </h5>
-            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordion-flush">
+            <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordion-flush">
               <div class="accordion-body">
                 <p data-i18n="faqAnswerOne">Please send an email to "contact@binath.com". My time zone is GMT+5.30</p>
               </div>
@@ -537,12 +537,12 @@
           <div class="accordion-item border mb-3 rounded-3">
             <h5 class="accordion-header">
               <button class="accordion-button collapsed" style="font-weight:bold;" type="button"
-                data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
-                aria-controls="collapseThree">
+                data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
+                aria-controls="collapseTwo">
                 <span data-i18n="faqQuestionTwo">How do I get your services?</span>
               </button>
             </h5>
-            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordion-flush">
+            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordion-flush">
               <div class="accordion-body">
                 <p data-i18n="faqAnswerTwo">For short-term projects you may reach me out on Upwork. For long-term projects, please contact me directly by sending an email to "contact@binath.com".</p>
               </div>
@@ -558,7 +558,7 @@
             </h5>
             <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordion-flush">
               <div class="accordion-body">
-                <p data-i18n="faqAnswerThree">I'm based in Colombo, Sri Lanka (GMT+5.30)</p>
+                <p data-i18n="faqAnswerThree">I'm based in Sri Lanka (Timezone: GMT+5.30)</p>
               </div>
             </div>
           </div>
@@ -690,7 +690,7 @@
             </div>
             <div class="d-grid">
               <button type="submit" class="btn btn-dark btn-lg text-uppercase rounded-4" id="submitBtn" data-i18n="submitButton">
-                Submit
+                Send
               </button>
             </div>
             <div id="responseMessage" class="mt-3" style="display: none;"></div>
@@ -740,7 +740,7 @@
     <div class="row g-4 my-4">
       
       <!-- Column 1: Socials & Upwork -->
-      <div class="col-md-3 mb-4 mb-md-0">
+      <div class="col-md-4 mb-4 mb-md-0">
         <div class="info-box">
           <!-- Added flexbox and gap for spacing between social icons -->
           <div class="social-links d-flex align-items-center gap-3 mb-4">
@@ -761,7 +761,7 @@
       </div>
 
       <!-- Column 2: Navigation Links -->
-      <div class="col-md-3 mb-4 mb-md-0 navlinks-footer">
+      <div class="col-md-4 mb-4 mb-md-0 navlinks-footer">
         <!-- Added d-flex flex-column gap-3 to space out the list items -->
         <ul class="list-unstyled d-flex flex-column gap-3 m-0">
           <li>
@@ -777,26 +777,19 @@
       </div>
 
       <!-- Column 3: Blog -->
-      <div class="col-md-3 mb-4 mb-md-0">
+      <div class="col-md-4 mb-4 mb-md-0">
         <h6 class="m-0">
           <!-- Added flexbox to vertically align the icon and text perfectly -->
           <a class="text-decoration-none text-white opacity-75 d-flex align-items-center gap-2" target="_blank" href="https://dev.to/binath">
-            <svg class="devto" width="24" height="24">
+            <svg class="devto" width="50" height="24">
               <use xlink:href="#devto"></use>
             </svg>
-            <span data-i18n="footerBlog">Blog</span>
+            <span data-i18n="footerBlog">Web Log</span>
           </a>
         </h6>
       </div>
 
-      <!-- Column 4: Email -->
-      <div class="col-md-3">
-        <!-- Changed to text-muted for better visual hierarchy -->
-        <p class="text-secondary mb-2" data-i18n="footerEmailLabel">Email.</p>
-        <h4>
-          <a href="mailto:hello@binath.com" class="text-white text-decoration-none">contact@binath.com</a>
-        </h4>
-      </div>
+      
 
     </div>
   </div>
@@ -880,11 +873,11 @@
         portfolioButton: 'View All Works',
         faqTitle: 'FAQs',
         faqQuestionOne: 'How do I contact you?',
-        faqAnswerOne: 'Please send an email to "contact@binath.com". My time zone is GMT+5.30',
+        faqAnswerOne: 'Please leave a message on the website. I will get back to you as soon as possible.',
         faqQuestionTwo: 'How do I get your services?',
-        faqAnswerTwo: 'For long-term projects, you can send me a message. For short-term projects please reach out on Upwork.',
+        faqAnswerTwo: 'For long-term projects ( > 6 months ), you can leave a message on the website and I will get back to you. For short-term projects you can reach out on Upwork.',
         faqQuestionThree: 'Where are you based?',
-        faqAnswerThree: "I'm based in Colombo, Sri Lanka (GMT+5.30)",
+        faqAnswerThree: "I'm based in Sri Lanka (Timezone: GMT+5.30)",
         faqQuestionFour: 'Can I use credit cards for payment?',
         faqAnswerFour: 'No only Paypal and Bank Transfer is accepted.',
         blogTitle: 'Blog Posts',
@@ -899,7 +892,7 @@
         namePlaceholder: 'your name',
         emailPlaceholder: 'your email',
         messagePlaceholder: 'your message',
-        submitButton: 'Submit',
+        submitButton: 'Send',
         newsletterTitle: 'Subscribe to the Newsletter',
         newsletterText: 'Get the latest updates on Automation and Security delivered to your inbox.',
         newsletterPlaceholder: 'Enter your email address',
@@ -908,7 +901,7 @@
         footerHome: 'Home',
         footerAbout: 'Profile',
         footerPortfolio: 'Portfolio',
-        footerBlog: 'Blog',
+        footerBlog: 'Web Log',
         footerEmailLabel: 'Email.',
       },
       de: {
