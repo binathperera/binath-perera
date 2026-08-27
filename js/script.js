@@ -632,7 +632,7 @@
 
       // Replace this URL with your Google Apps Script web app URL for newsletter
       var newsletterScriptURL =
-        "https://script.google.com/macros/s/AKfycbyAyXL5Fy_d-hY8wFPC306VPeONo1UestUJXV2HP--AdJxjf_rHxffFe5li0fZYMytZ/exec";
+        "https://script.google.com/macros/s/AKfycbwZrev-Ir8XXiBWJZNQDpL1QArlcn41SIEmW104GfYdNwWNlHCosas7VFKvRflNvtYf/exec";
 
       // Send data to Google Sheets via Google Apps Script
       $.ajax({
